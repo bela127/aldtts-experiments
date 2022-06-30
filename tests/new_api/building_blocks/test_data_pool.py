@@ -1,7 +1,7 @@
 import numpy as np
 
-from ide.modules.queried_data_pool import FlatQueriedDataPool
-from ide.core.data_subscriber import DataSubscriber
+from alts.modules.queried_data_pool import FlatQueriedDataPool
+from alts.core.data_subscriber import DataSubscriber
 
 
 def test_data_pool_add():

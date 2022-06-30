@@ -15,7 +15,7 @@ from IPython.core import ultratb
 sys.excepthook = ultratb.FormattedTB(mode='Verbose', color_scheme='Linux', call_pdb=False)
 
 
-import ide.run_from_path as rfp
+import alts.core.run_from_path as rfp
 
 experiment_folder = "./experiment_results/run_dim_3_sqr"
 
