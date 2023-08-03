@@ -40,42 +40,42 @@ from alts.modules.oracle.data_source import (
 dss = [
     LineDataSource,
     SquareDataSource,
-    #PowDataSource,
-    #ExpDataSource,
+    PowDataSource,
+    ExpDataSource,
     CrossDataSource,
-    #DoubleLinearDataSource,
+    DoubleLinearDataSource,
     HourglassDataSource,
     ZDataSource,
-    #ZInvDataSource,
+    ZInvDataSource,
     LinearPeriodicDataSource,
     LinearStepDataSource,
     SineDataSource,
     HypercubeDataSource,
     StarDataSource,
-    #HyperSphereDataSource,
-    #GaussianProcessDataSource,
-    #BrownianProcessDataSource,
+    HyperSphereDataSource,
+    GaussianProcessDataSource,
+    BrownianProcessDataSource,
 ]
 
 tests = [
-    #SampleTest(
-    #            query_sampler = AllResultPoolQuerySampler(),
-    #            data_sampler = KDTreeRegionDataSampler(0.05),
-    #            multi_sample_test=KWHMultiSampleTest()
-    #        ),
-    #Pearson(),
-    #Spearmanr(),
-    #Kendalltau(),
+    SampleTest(
+        query_sampler = AllResultPoolQuerySampler(),
+        data_sampler = KDTreeRegionDataSampler(0.05),
+        multi_sample_test=KWHMultiSampleTest()
+    ),
+    Pearson(),
+    Spearmanr(),
+    Kendalltau(),
     #FIT(),
-    #XiCor(),
-    #Hoeffdings(),
-    #hypoDcorr(),
-    #hypoHsic(),
+    XiCor(),
+    Hoeffdings(),
+    hypoDcorr(),
+    hypoHsic(),
     hypoHHG(),
     hypoMGC(),
     hypoKMERF(),
-    DependencyMeasureTest(dependency_measure=dHSIC()),
-    DependencyMeasureTest(dependency_measure=dCor())
+    #DependencyMeasureTest(dependency_measure=dHSIC()),
+    #DependencyMeasureTest(dependency_measure=dCor())
 ]
 
 test_interpolators = [
@@ -94,7 +94,6 @@ def create_blueprints():
                 for ds in dss:
                     for noise in np.arange(0, 5, 0.5):
                         blueprint = IDTBlueprint(
-                            repeat=1,
                             process=DataSourceProcess(
                                 data_source=NoiseAugmentation(data_source=ds(query_shape = (d,), result_shape = (1,)), noise_ratio=noise)
                             ),
@@ -112,4 +111,4 @@ blueprints = create_blueprints()
 
 if __name__ == '__main__':
     er = ExperimentRunner(blueprints)
-    er.run_experiments()#_parallel()
+    er.run_experiments_parallel()

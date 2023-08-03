@@ -59,8 +59,8 @@ tests = [
     hypoHHG(),
     hypoMGC(),
     hypoKMERF(),
-    DependencyMeasureTest(dependency_measure=dHSIC()),
-    DependencyMeasureTest(dependency_measure=dCor())
+    #DependencyMeasureTest(dependency_measure=dHSIC()),
+    #DependencyMeasureTest(dependency_measure=dCor())
 ]
 
 test_interpolators = [
@@ -96,4 +96,4 @@ blueprints = create_blueprints()
 
 if __name__ == '__main__':
     er = ExperimentRunner(blueprints)
-    er.run_experiments()#_parallel()
+    er.run_experiments_parallel()
