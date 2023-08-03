@@ -1,6 +1,5 @@
 from alts.core.experiment_runner import ExperimentRunner
 from aldtts.modules.blueprint import DTBlueprint
-from aldtts.modules.evaluator import PlotTestPEvaluator, PlotQueriesEvaluator
 
 
 
