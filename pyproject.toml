@@ -12,15 +12,6 @@ packages = [
 python = ">=3.8,<3.10"
 #aldtts-modules = { path = "/home/bela/Cloud/code/Git/aldtts-modules", develop = true }
 aldtts-modules = {git = "https://github.com/bela127/aldtts-modules.git"}
-libclang = "<12.0"
-coloredlogs = "^15.0.1"
-ipython = "^8.0.1"
-matplotlib = "^3.5.1"
-nptyping = ">=2.0.0a1"
-scikit-learn = "^1.0.2"
-numpy = "^1.22.3"
-scipy = "1.8"
-bayesian-optimization = "^1.2.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2.5"
