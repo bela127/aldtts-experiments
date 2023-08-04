@@ -66,7 +66,7 @@ tests = [
     Pearson(),
     Spearmanr(),
     Kendalltau(),
-    #FIT(),
+    FIT(),
     XiCor(),
     Hoeffdings(),
     hypoDcorr(),
