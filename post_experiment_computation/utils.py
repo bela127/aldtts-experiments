@@ -50,6 +50,13 @@ def calc_mean_std(datas):
 
     return mean, std
 
+def calc_med_std(datas):
+
+    mean = np.median(datas, axis=-1)
+    std = np.std(datas, axis=-1)
+
+    return mean, std
+
 class FileWorker(Protocol):
     def __call__(self, file_path: str, file_name: str) -> Any: ...
 
@@ -162,7 +169,7 @@ class DataComputer:
 
         ps = np.asarray(ps).T
 
-        mean_p, std_p = calc_mean_std(ps)
+        mean_p, std_p = calc_med_std(ps)
 
         quant_p_std = (exp_quantity, mean_p, std_p)
         
