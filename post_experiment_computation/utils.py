@@ -12,8 +12,8 @@ import random
 
 
 sim_time = 1000
-base_path = "/home/bela/Cloud/code/Git/aldtts-experiments/eval"
-save_path = "/home/bela/Cloud/code/Git/aldtts-experiments/fig/exp_figures"
+base_path = "./eval"
+save_path = "./fig/exp_figures"
 
 @dataclass
 class RunRes():
