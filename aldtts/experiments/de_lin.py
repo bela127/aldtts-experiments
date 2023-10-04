@@ -10,4 +10,4 @@ blueprints = [blueprint]
 
 if __name__ == '__main__':
     er = ExperimentRunner(blueprints)
-    er.run_experiments()
+    er.run_experiments_parallel()
